@@ -1,0 +1,35 @@
+### Recuperar todo los registros
+GET http://localhost:1234/movies
+
+### Recuperar un registro por id
+GET http://localhost:1234/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+### Filtrar un registro o recuperar registros por recurso
+GET http://localhost:1234/movies?genre=Sci-Fi
+
+### crear un registro
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{    
+    "title":"Hypnotic",
+    "year":2023,
+    "director":"Jeremy Phoenix",
+    "duration":152,
+    "poster":"https://i.etsystatic.com/35681979/r/il/dfe3ba/3957859451/",
+    "genre":[
+      "Sci-Fi",
+      "Thiller"      
+    ],
+    "rate":6.7
+}
+
+### Acualizar un registro con patch
+PATCH http://localhost:1234/movies/7d2832f8-c70a-410e-8963-4c93bf36cc9c
+Content-Type: application/json
+
+{
+    "id":123,
+    "title":"Dinosauros",
+    "year":1993
+}
